@@ -117,25 +117,6 @@ class Board {
 		boardEl.addEventListener('click', e => this.handleClick(e))
 	}
 
-	// createBoard(boardEl) {
-	// 	for (let row = 0; row < this.size; row++) {
-	// 		const rowArray = []
-	// 		for (let col = 0; col < this.size; col++) {
-	// 			const cell = new Cell(row, col, (row + col) % 2 === 1)
-	// 			rowArray.push(cell)
-	// 			boardEl.appendChild(cell.element)
-
-	// 			if (cell.isPlayable && (row < 3 || row > 4)) {
-
-	// 				const	piece = new Piece(row < 3 ? 'up' : 'down', false, row, col)
-
-	// 				this.addPiece(piece, cell)
-	// 			}
-	// 		}
-	// 		this.cells.push(rowArray)
-	// 	}
-	// }
-
 	createBoard(boardEl) {
 		for (let row = 0; row < this.size; row++) {
 			const rowArray = []
@@ -145,15 +126,8 @@ class Board {
 				boardEl.appendChild(cell.element)
 
 				if (cell.isPlayable && (row < 3 || row > 4)) {
-					let piece
-					if (row == 5 && col == 4) {
-						piece = new Piece(row < 3 ? 'up' : 'down', true, row, col)
-					} else if (row == 2 && col == 1) {
-						piece = new Piece(row < 3 ? 'up' : 'down', true, row, col)
-					} else {
-						piece = new Piece(row < 3 ? 'up' : 'down', false, row, col)
-					}
-					// const piece = new Piece(row < 3 ? 'up' : 'down', false, row, col)
+
+					const	piece = new Piece(row < 3 ? 'up' : 'down', false, row, col)
 
 					this.addPiece(piece, cell)
 				}
@@ -161,6 +135,32 @@ class Board {
 			this.cells.push(rowArray)
 		}
 	}
+
+	// createBoard(boardEl) {
+	// 	for (let row = 0; row < this.size; row++) {
+	// 		const rowArray = []
+	// 		for (let col = 0; col < this.size; col++) {
+	// 			const cell = new Cell(row, col, (row + col) % 2 === 1)
+	// 			rowArray.push(cell)
+	// 			boardEl.appendChild(cell.element)
+
+	// 			if (cell.isPlayable && (row < 3 || row > 4)) {
+	// 				let piece
+	// 				if (row == 5 && col == 4) {
+	// 					piece = new Piece(row < 3 ? 'up' : 'down', true, row, col)
+	// 				} else if (row == 2 && col == 1) {
+	// 					piece = new Piece(row < 3 ? 'up' : 'down', true, row, col)
+	// 				} else {
+	// 					piece = new Piece(row < 3 ? 'up' : 'down', false, row, col)
+	// 				}
+	// 				// const piece = new Piece(row < 3 ? 'up' : 'down', false, row, col)
+
+	// 				this.addPiece(piece, cell)
+	// 			}
+	// 		}
+	// 		this.cells.push(rowArray)
+	// 	}
+	// }
 
 	changeMove() {
 		this.move = this.move == 0 ? 1 : 0
