@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #060505;
+}
+
+.game{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #060505;
+
+}
+.board{
+  width: 90vw;
+  height: 90vh;
+  max-width: 90vh;
+  max-height: 90vw;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  
+}
+.cell{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0.5px solid #666e42;
+}
+.cell:nth-child(odd){
+  background-color: black;
+}
+.cell:nth-child(even) {
+  background: #444;
+}
+
+.piece{
+  width: 80%;
+  height: 80%;
+
+  border-radius: 100%;
+}
+.piece.green{
+  background-color: #467257;
+  transition: 0.25s;
+}
+.piece.white{
+  background-color: aliceblue;
+  transition: 0.25s;
+}
+.piece.white.quine{
+  border-color:  #43aea3;
+  border-style: solid;
+  border-width: calc((1vh + 1vw) * 0.2);
+  transition: 0.25s;
+}
+.piece.green.quine{
+  border-color:  #c8dd8c;
+  border-style: solid;
+  border-width: calc((1vh + 1vw) * 0.2);
+  transition: 0.25s;
+}
+
+
+.selected_piece.green{
+  background-color: #264532;
+  transition: 0.25s;
+}
+.selected_piece.white{
+  background-color: rgb(146, 146, 146);
+  transition: 0.25s;
+}
+/* .selected_piece.quine{
+  border-color:  #a7ae43;
+  border-width: 2px;
+  transition: 0.25s;
+} */
+
+.moveBoard{
+  position: absolute;
+  top: 0;
+
+  width: 100vw;
+  height: 0.5rem;
+
+  background-color: aliceblue;
+  transition: 0.25s;
+}
+.moveBoard.green{
+  background-color:  #467257;
+  transition: 0.25s;
+}
+.cell.black{
+  background-color: #000000;
+  transition: 0.25s;
+}
+.cell.gold{
+  background-color: #a7ae43;
+  transition: 0.25s;
+}
+.cell.gray{
+  background-color: #444;
+  transition: 0.25s;
+}
+.cell.lightCell{
+  background-color: #9cd5b2;
+  transition: 0.25s;
+}
+.cell.radarLightDown{
+  background-color: #599d9c;
+  transition: 0.25s;
+}
+.cell.radarLightUp{
+  background-color: #b7c296;
+  transition: 0.25s;
+}
+.cell.killingLight{
+  background-color: #a54942;
+  transition: 0.25s;
+} 
